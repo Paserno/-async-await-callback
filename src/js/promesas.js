@@ -29,7 +29,19 @@ export const buscarHeroe = ( id )=> {
         }
 
     });
+}
+//! async, crea una Promesa, pero en vez de usar el parametro "resolve" y "reject", usaremos en la primera opcion un "return" y en la segunda opcion para manejar los errores "throw".
+export const buscarHeroeAsync= async( id )=> {
 
+    const hereo = heroes[id];
+
+        if (hereo) {
+            return hereo;
+        }else{
+            throw`No Existe un heroe con el id ${id}`;
+        }
+
+  
 }
 
 
@@ -40,7 +52,7 @@ const  promesaMedia = new Promise((resolve,reject)=>{
     setTimeout(() => resolve('Promesa Media'), 1500);
 });
 const  promesaRapida = new Promise((resolve,reject)=>{
-    setTimeout(() => reject('Promesa Rapida'), 1000);
+    setTimeout(() => resolve('Promesa Rapida'), 1000);
 });
 
 export {
