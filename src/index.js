@@ -1,9 +1,11 @@
-import { obtenerHeroesArr } from "./js/await";
-
+import { obtenerHeroesArr, obtenerHeroesAwait } from "./js/await";
 
 console.time('await');
-obtenerHeroesArr().then(heroe => {console.table(heroe)
-console.timeEnd('await');
-});
+
+obtenerHeroesAwait('iron2')
+    .then(heroe => {
+        console.log(heroe);
+        console.timeEnd('await');
+    }).catch(console.warn);
 
 
