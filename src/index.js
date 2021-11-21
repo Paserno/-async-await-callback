@@ -1,7 +1,14 @@
-import {saludar} from './js/componentes';
+import { buscarHeroe } from './js/callbacks';
 import './styles.css';
 
+const heroeID = 'hulk';
 
-const nombre = 'Felipe';
+//! Funcion como argumento
+buscarHeroe( heroeID, (err, heroe) => {
+    if (err) {
+        console.error(err);
+    } else {
+        console.info(heroe);
+    }
+} );
 
-saludar(nombre);
