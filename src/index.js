@@ -19,10 +19,20 @@ const heroeID2 = 'iron';
 
 //     });
 // });
+//! ----------------------------------Resumir----------------------------------
+// buscarHeroe(heroeID1).then( heroe1 => {
+//      console.log(`Eviando a ${heroe.nombre} a la mision`)
+//     buscarHeroe(heroeID2).then(heroe2 =>{
+//         console.log(`Eviando a ${heroe1.nombre} y ${heroe2.nombre} a la mision`);
+//     })
+// });
+//!----------------------------------------------------------------------------
+Promise.all([buscarHeroe(heroeID1), buscarHeroe(heroeID2)])
+    .then(([heroe1,heroe2])=>{
 
-buscarHeroe(heroeID1).then( heroe => {
+    
+    console.log(`Eviando a ${heroe1.nombre} y ${heroe2.nombre} a la mision`);
 
-    console.log(`Eviando a ${heroe.nombre} a la mision`)
 });
 
 
